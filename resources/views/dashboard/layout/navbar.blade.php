@@ -1,72 +1,74 @@
-<nav class="bg-gray-800 dark:bg-blue-50 border-gray-200 dark:bg-gray-900 sticky top-0 z-20">
-  <div class="max-w-screen flex flex-wrap items-center justify-between lg:px-8 px-7 py-4">
-    <a class="flex items-center space-x-3 rtl:space-x-reverse w-[45px] h-[45px]" id="sidebarToggle">
-      <span class="font-sans self-center font-semibold text-sm antialiased whitespace-nowrap text-white px-2 py-2 bg-blue-500 rounded">
-        <svg width="30px" height="30px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#FFFFFF" stroke-width="0.528"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6H20M4 12H20M4 18H20" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-      </span>
-    </a>
+<!-- Desktop Header -->
+<header class="w-full items-center py-2 px-6 hidden sm:flex bg-gray-800 text-white">
+  <div class="w-1/2"></div>
+  <div x-data="{ isOpen: false }" class="relative w-1/2 flex justify-end">
+    <div  @click="isOpen = !isOpen" class=" flex flex-row gap-2 z-10 h-12 cursor-pointer">
+      {{-- <button
+        class="realtive h-12 rounded-full overflow-hidden border-4 border-gray-400 hover:border-gray-300 focus:border-gray-300 focus:outline-none">
+        <img src="https://source.unsplash.com/uJ8LNVCBjFQ/400x400">
+      </button> --}}
+      <div class="my-auto">
+        {{ auth()->user()->name }}
+      </div>
 
-    <button data-collapse-toggle="navbar-default" type="button"
-      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-      aria-controls="navbar-default" aria-expanded="false">
-      <span class="sr-only">Open main menu</span>
-      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-        viewBox="0 0 17 14">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M1 1h15M1 7h15M1 13h15" />
+      <svg class="w-2.5 h-2.5 my-auto" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
       </svg>
-    </button>
-
-    <div class="hidden w-full lg:block lg:w-auto" id="navbar-default">
-      <ul class="font-medium flex flex-col p-4 lg:p-0 mt-4 border border-gray-100 rounded-lg bg-blue-50 lg:flex-row lg:space-x-8 rtl:space-x-reverse lg:mt-0 lg:border-0 lg:bg-transparent dark:bg-gray-800 lg:dark:bg-gray-900 dark:border-gray-700">
-        {{-- <li>
-          <a href="#"
-            class="block py-2 px-3 text-gray-900 lg:text-gray-100 rounded hover:bg-sky-200 lg:hover:bg-transparent lg:border-0 lg:hover:text-cyan-300 lg:p-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent text-sm"
-          >Mengenal Ampel</a>
-        </li>
-        <li>
-          <a href="#"
-            class="block py-2 px-3 text-gray-900 lg:text-gray-100 rounded hover:bg-sky-200 lg:hover:bg-transparent lg:border-0 lg:hover:text-cyan-300 lg:p-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent text-sm"
-            >Layanan Publik</a>
-        </li>
-        <li>
-          <a href="#"
-            class="block py-2 px-3 text-gray-900 lg:text-gray-100 rounded hover:bg-sky-200 lg:hover:bg-transparent lg:border-0 lg:hover:text-cyan-300 lg:p-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent text-sm"
-            >Informasi Publik</a>
-        </li>
-        <li>
-          <a href="#"
-            class="block py-2 px-3 text-gray-900 lg:text-gray-100 rounded hover:bg-sky-200 lg:hover:bg-transparent lg:border-0 lg:hover:text-cyan-300 lg:p-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent text-sm"
-            >Contact</a>
-        </li> --}}
-        <li>
-          <a 
-            class="block py-2 px-3 text-gray-900 lg:text-gray-100 rounded hover:bg-sky-200 lg:hover:bg-transparent lg:border-0 lg:hover:text-cyan-300 lg:p-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent text-sm">
-            <button class="!w-full md:w-fit flex items-center justify-between text-gray-900 lg:text-gray-100 rounded hover:bg-sky-200 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent" id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar">
-              {{ auth()->user()->name }}
-              <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-              </svg>
-            </button>
-          </a>
-          
-          <!-- Dropdown menu -->
-          <div id="dropdownNavbar" class="hidden lg:!absolute lg:w-fit lg:!right-10 lg:!left-auto lg:!top-[77px] !transform-none w-full !relative font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-            <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-              <li>
-                <a href="/" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Beranda</a>
-              </li>
-            </ul>
-            <div class="py-1">
-              <form action="logout" method="POST">
-                @csrf
-                <button class="w-full block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white" type="submit">Logout</button>
-              </form> 
-            </div>
-          </div>
-
-        </li>
-      </ul>
+    </div>
+    
+    {{-- <button x-show="isOpen" @click="isOpen = false" class="h-full w-full fixed inset-0 cursor-default"></button> --}}
+    <div x-show="isOpen" class="absolute w-32 bg-white rounded-lg shadow-lg py-2 mt-16 text-gray-800">
+      <a href="/" class="block px-4 py-2 account-link hover:bg-gray-300">Beranda</a>
+      <form action="logout" method="post">
+        @csrf
+        <button class="block px-4 py-2 account-link hover:bg-gray-300 w-full text-start" type="submit">Logout</button>
+      </form>
     </div>
   </div>
-</nav>
+</header>
+
+<!-- Mobile Header & Nav -->
+<header x-data="{ isOpen: false }" class="w-full bg-sidebar py-5 px-6 sm:hidden bg-gray-800">
+  <div class="flex items-center justify-between">
+    <a href="/dashboard" class="text-white text-xl font-semibold uppercase hover:text-gray-300 flex flex-row gap-2">
+      <img src="{{ asset('blog')}}/assets/logo-surabaya.png" class="h-10" alt="Kelurahan Ampel Logo" />
+      <span class="my-auto">KELURAHAN AMPEL</span>
+    </a>
+    <button @click="isOpen = !isOpen" class="text-white text-3xl focus:outline-none">
+      <i x-show="!isOpen" class="fas fa-bars"></i>
+      <i x-show="isOpen" class="fas fa-times"></i>
+    </button>
+  </div>
+
+  <!-- Dropdown Nav -->
+  <nav :class="isOpen ? 'flex' : 'hidden'" class="flex flex-col pt-4">
+    <a href="/dashboard" class="flex items-center text-white py-2 pl-4 nav-item hover:bg-gray-700 rounded-md {{ $title == 'About' ? '' : 'opacity-75'}}">
+      About
+    </a>
+    <a href="/dashboard/slide/create"
+      class="flex items-center text-white hover:opacity-100 py-2 pl-4 nav-item hover:bg-gray-700 rounded-md {{ $title == 'Slide' ? '' : 'opacity-75'}}">
+      Slide
+    </a>
+    <a href="#"
+      class="flex items-center text-white hover:opacity-100 py-2 pl-4 nav-item hover:bg-gray-700 rounded-md {{ $title == 'Category' ? '' : 'opacity-75'}}">
+      Category
+    </a>
+    <a href="#"
+      class="flex items-center text-white hover:opacity-100 py-2 pl-4 nav-item hover:bg-gray-700 rounded-md {{ $title == 'Article' ? '' : 'opacity-75'}}">
+      Article
+    </a>
+    <span class="border-t opacity-75 w-[96%] mx-auto my-4"></span>
+    <a href="/" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item hover:bg-gray-700 rounded-md">
+      Beranda
+    </a>
+    <form action="logout" method="post">
+      @csrf
+      <button class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item hover:bg-gray-700 rounded-md w-full"  type="submit">
+        Logout
+      </button>
+    </form>
+  </nav>
+  <!-- <button class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
+    <i class="fas fa-plus mr-3"></i> New Report
+  </button> -->
+</header>
