@@ -7,32 +7,32 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
   <title>{{ config('app.name') }}</title>
-  <!-- Favicon-->
+  {{-- Favicon --}}
   <link rel="icon" type="image/x-icon" href="{{ secure_asset('blog/assets/favicon.ico') }}" />
   <link rel="icon" type="image/x-icon" href="{{ asset('blog/assets/favicon.ico') }}" />
-  <!-- Core theme CSS -->
+  {{-- Core theme CSS --}}
   <link rel="stylesheet" href="{{ asset('blog/css/styles.css')}}">
   <link rel="stylesheet" href="{{ secure_asset('blog/css/styles.css')}}">
-  <!-- Core theme CSS (Tailwind)-->
+  {{-- Core theme CSS (Tailwind) --}}
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Core theme CSS (Flowbite)-->
+  {{-- Core theme CSS (Flowbite) --}}
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
 </head>
 
 <body>
 
-  <!-- Responsive navbar-->
+  {{-- Responsive navbar --}}
   @include('blog.layout.navbar')
 
   {{-- make sure slide only exsist in '/' --}}
   @if (Request::is('/'))
-    <!-- Page header with logo and tagline-->
+    {{-- Page header with logo and tagline --}}
     @include('blog.layout.slide')
   @endif
 
   
     
-  <!-- Page content-->
+  {{-- Page content --}}
   <div class="max-w-full mx-auto">
     <div class="flex flex-col lg:flex-row">
       <!-- Blog entries-->
@@ -40,14 +40,14 @@
       
       {{-- make sure aside only exsist in '/' --}}
       @if (Request::is('/'))
-        <!-- Side widgets-->
+        {{-- Side widgets --}}
         @include('blog.layout.aside')
       @endif
 
     </div>
   </div>
 
-  <!-- Footer-->
+  {{-- Footer --}}
   <footer class="py-5 bg-gray-700 flex flex-col">
     <div class="flex flex-row justify-center justify-items-center mt-6 mb-4">
       <img class="h-12" src="{{ asset('blog') }}/assets/logo-surabaya.png" alt="">
@@ -84,7 +84,7 @@
     <p class="mt-16 mb-3 mx-10 py-5 border-t border-white text-center text-white">&copy; Kelurahan Ampel 2023</p>
   </footer>
   
-  <!-- Tailwind Flowbite core JS-->
+  {{-- Tailwind Flowbite core JS --}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
   <!-- Core theme JS-->
   <script src="{{ asset('blog/js/scripts.js') }}"></script>
