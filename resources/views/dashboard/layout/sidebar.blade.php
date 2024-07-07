@@ -1,22 +1,24 @@
-<div class="md:w-60 bg-white h-screen w-full border-e border-gary-300 transition-all ease-out delay-0 duration-500 absolute left-[-48rem] md:left-[-15rem] z-20" id="sidebar-wrapper">
-  <div class="bg-gray-800 text-white flex items-center border-gary-300 py-4 ps-3">
-      <div class="h-[45px] flex items-center">
-        <span class="text-xl font-medium">Admin Dashboard</span>
-      </div>
+<aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl bg-gray-700">
+  <div class="p-6">
+    <a href="/dashboard" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Admin Kelurahan Ampel</a>
   </div>
 
-  <div class="flex flex-col">
-      <a class="p-4 border-b border-gary-300 hover:bg-gray-100 text-gray-500 hover:text-gray-800"
-        href="#!">About
-      </a>
-      <a class="p-4 border-b border-gary-300 hover:bg-gray-100 text-gray-500 hover:text-gray-800"
-        href="#!">Slide
-      </a>
-      <a class="p-4 border-b border-gary-300 hover:bg-gray-100 text-gray-500 hover:text-gray-800"
-        href="#!">Category
-      </a>
-      <a class="p-4 border-b border-gary-300 hover:bg-gray-100 text-gray-500 hover:text-gray-800"
-        href="#!">Article
-      </a>
-  </div>
-</div>
+  <nav class="text-white text-base font-semibold pt-3">
+    <a href="/dashboard" 
+        class="flex items-center py-4 pl-6 nav-item {{ $title == 'About' ? 'bg-white text-gray-700' : 'text-white opacity-75 hover:opacity-100 hover:bg-gray-800'}}">
+        About
+    </a>
+    <a href="/dashboard/slide"
+        class="flex items-center py-4 pl-6 nav-item {{ $title == 'Slide' ? 'bg-white text-gray-700' : 'text-white opacity-75 hover:opacity-100 hover:bg-gray-800'}}">
+        Slide
+    </a>
+    <a href=""
+        class="flex items-center py-4 pl-6 nav-item {{ $title == 'Category' ? 'bg-white text-gray-700' : 'text-white opacity-75 hover:opacity-100 hover:bg-gray-800'}}">
+        Category
+    </a>
+    <a href=""
+        class="flex items-center py-4 pl-6 nav-item {{ $title == 'Article' ? 'bg-white text-gray-700' : 'text-white opacity-75 hover:opacity-100 hover:bg-gray-800'}}">
+        Article
+    </a>
+  </nav>
+</aside>

@@ -1,0 +1,19 @@
+{
+  "artificialDelayMilliseconds": 1000,
+  "keepExistingTerminalsOpen": false,
+  "runOnStartup": true,
+  "terminals": [
+    {
+      "splitTerminals": [
+        {
+          "name": "server",
+          "commands": ["","php artisan serve --port=3000"]
+        },
+        {
+          "name": "main",
+          "commands": [""]
+        }
+      ]
+    }
+  ]
+}

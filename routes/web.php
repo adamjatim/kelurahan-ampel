@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SlideController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,12 +19,14 @@ Route::get('/', function () {
   return view('blog.index');
 });
 
+Route::redirect('home', 'dashboard');
+
 Route::get('/login', [AuthController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [AuthController::class, 'authenticate']);
 Route::post('/logout', [AuthController::class, 'logout']);
 
 Route::get('/dashboard', function () {
-  return view('dashboard.index');
+  return view('dashboard.index')->with(['title' =>  'About']);
 })->middleware('auth');
 
-Route::resource('/dashboard/slide', SlideController::class);
+Route::resource('/dashboard/slide', SlideController::class)->middleware('auth');
