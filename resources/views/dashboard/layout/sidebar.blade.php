@@ -12,9 +12,9 @@
         class="flex items-center py-4 pl-6 nav-item {{ $title == 'Slide' ? 'bg-white text-gray-700' : 'text-white opacity-75 hover:opacity-100 hover:bg-gray-800'}}">
         Slide
     </a>
-    <a href=""
-        class="flex items-center py-4 pl-6 nav-item {{ $title == 'Category' ? 'bg-white text-gray-700' : 'text-white opacity-75 hover:opacity-100 hover:bg-gray-800'}}">
-        Category
+    <a href="/dashboard/kategori/create"
+        class="flex items-center py-4 pl-6 nav-item {{ $title == 'kategori ' ? 'bg-white text-gray-700' : 'text-white opacity-75 hover:opacity-100 hover:bg-gray-800'}}">
+        Category 
     </a>
     <a href=""
         class="flex items-center py-4 pl-6 nav-item {{ $title == 'Article' ? 'bg-white text-gray-700' : 'text-white opacity-75 hover:opacity-100 hover:bg-gray-800'}}">
