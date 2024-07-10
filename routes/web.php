@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SlideController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,3 +31,5 @@ Route::get('/dashboard', function () {
 })->middleware('auth');
 
 Route::resource('/dashboard/slide', SlideController::class)->middleware('auth');
+Route::resource('/dashboard/kategori', CategoryController::class)->middleware('auth');
+Route::get('/slug-kategori',[CategoryController::class,'getSlug'])->middleware('auth');
