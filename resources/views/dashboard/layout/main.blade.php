@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   {{-- CKEditor cdn --}}
   <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
+  {{-- Data Tables cdn --}}
+  <script rel="stylesheet" src="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css"></script>
 </head>
 
 <body class="bg-gray-100 flex">
@@ -45,6 +47,16 @@
   {{-- Core theme JS --}}
   <script src="{{ asset('admin/js/scripts.js') }}"></script>
   <script src="{{ secure_asset('admin/js/scripts.js') }}"></script>
+  {{-- Data Tables js --}}
+  <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+  <script src="https://cdn.datatables.net/2.0.8/js/dataTables.tailwindcss.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      $('#myTable').DataTable();
+    });
+    // new DataTable('#myTable');
+  </script>
 </body>
 
 </html>
