@@ -13,7 +13,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.kategori.index')->with([
+            'categories' => Category::all(),
+            'title' => 'Kategori'
+        ]);
     }
 
     /**
@@ -74,7 +77,9 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Category::where('id', $id)->delete();
+
+        return back()->with('info', 'Kategori berhasil dihapus');
     }
 
     public function getSlug(Request $request)
