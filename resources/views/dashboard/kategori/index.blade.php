@@ -46,7 +46,7 @@
               {{ $category->nama }}
           </td>
           <td class="px-6 py-4 w-full">
-              {{ $category->deskripsi }}
+              {!! $category->deskripsi !!}
           </td>
           <td class="px-6 py-4 flex flex-row gap-1">
               <a href="/dashboard/kategori/{{ $category->id }}/edit" class="flex flex-row gap-1 font-medium py-2 px-3 rounded-md bg-yellow-300 hover:bg-yellow-400 text-gray-800 w-fit" title="edit kategori">
