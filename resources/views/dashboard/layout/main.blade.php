@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <title>Dashboard - {{ $title }}</title>
+  <title>{{ config('app.name')}} -> {{ $title }}</title>
   <link rel="icon" type="image/x-icon" href="{{ secure_asset('admin/assets/favicon.ico') }}" />
   <link rel="icon" type="image/x-icon" href="{{ asset('admin/assets/favicon.ico') }}" />
   {{-- Core theme CSS --}}

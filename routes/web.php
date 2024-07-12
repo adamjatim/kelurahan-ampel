@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SlideController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,9 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-  return view('blog.index');
-});
+Route::get('/', [BlogController::class,'index']);
 
 Route::redirect('home', 'dashboard');
 
