@@ -15,7 +15,7 @@ class CategoryController extends Controller
     {
         return view('dashboard.kategori.index')->with([
             'categories' => Category::all(),
-            'title' => 'Kategori'
+            'title' => 'Category'
         ]);
     }
 
@@ -24,7 +24,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('dashboard.kategori.kategori-baru')->with(['title'=>'kategori']); 
+        return view('dashboard.kategori.kategori-baru')->with([
+            'title'=>'Category'
+        ]); 
     }
 
     /**
@@ -63,7 +65,7 @@ class CategoryController extends Controller
     {
         return view('dashboard.kategori.kategori-edit')->with([
             'data'  => Category::where('id', $id)->first(),
-            'title' => 'Kategori'
+            'title' => 'Category'
         ]);
     }
 
@@ -90,7 +92,7 @@ class CategoryController extends Controller
 
         Category::where('id', $id)->update($dataValidasi);
 
-        return redirect('/dashboard/kategori/')->with('info', 'Kategori berhasil di update');
+        return redirect('/dashboard/kategori')->with('info', 'Kategori berhasil di update');
     }
 
     /**
