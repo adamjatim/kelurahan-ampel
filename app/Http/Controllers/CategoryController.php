@@ -40,7 +40,7 @@ class CategoryController extends Controller
             'nama.required' => 'nama ketegori harus di isi', 
             'slug.required' => 'slug ketegori tidak boleh kosong', 
             'slug.unique' => 'slug sudah ada',
-            'deskripsi.max' => 'maximal 255 karakter'
+            'deskripsi.max' => 'maximal 255 karakter',
         ]);
 
         Category::create($validasi);
@@ -61,7 +61,10 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('dashboard.kategori.kategori-edit')->with([
+            'data'  => Category::where('id', $id)->first(),
+            'title' => 'Kategori'
+        ]);
     }
 
     /**
@@ -69,7 +72,25 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = Category::where('id', $id)->first();
+
+        if ($request->nama != $data->nama) {
+            $validasi['nama'] = 'required';            
+            $validasi['slug'] = 'required|unique:categories';            
+        }
+
+        $validasi['deskripsi'] = 'max:255';
+
+        $dataValidasi = $request->validate($validasi, [
+            'nama.required' => 'nama ketegori harus di isi', 
+            'slug.required' => 'slug ketegori tidak boleh kosong', 
+            'slug.unique' => 'slug sudah ada',
+            'deskripsi.max' => 'maximal 255 karakter',
+        ]);
+
+        Category::where('id', $id)->update($dataValidasi);
+
+        return redirect('/dashboard/kategori/')->with('info', 'Kategori berhasil di update');
     }
 
     /**

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('slug')->unique();
-            $table->string('deskirpsi')->nullable();
+            $table->string('deskripsi')->nullable();
             $table->timestamps();
         });
     }
