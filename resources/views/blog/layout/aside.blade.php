@@ -21,21 +21,20 @@
   
   <!-- Categories widget-->
   <div class="my-6 border rounded-lg slideanim">
-    <div class="px-2 py-3 bg-gray-200 rounded-t-lg">Categories</div>
-    <div class="flex flex-row w-full px-3 py-4">
-      
-      <ul class="my-auto mx-8 underline">
-        <li><a href="#!">Web Design</a></li>
-        <li><a href="#!">HTML</a></li>
-        <li><a href="#!">Freebies</a></li>
+    <div class="px-2 py-3 bg-gray-200 rounded-t-lg">
+      <span class="mx-2 text-md font-medium text-gray-900 dark:text-white">Categories</span></div>
+    <div class="grid flex-rows grid-cols-2 gap-2 px-3 py-3">
+      @foreach ( $categories as $category)
+      <ul class="my-auto mx-2">
+        <li class="">
+          <a href="#!" class="decoration-none flex-grid justify-between grid-auto-cols ">
+            <span>
+              {{ $category->nama }}
+            </span>
+          </a>
+        </li>
       </ul>
-
-      <ul class="my-auto mx-8 underline">
-        <li><a href="#!">JavaScript</a></li>
-        <li><a href="#!">CSS</a></li>
-        <li><a href="#!">Tutorials</a></li>
-      </ul>
-
+      @endforeach
     </div>
   </div>
 
