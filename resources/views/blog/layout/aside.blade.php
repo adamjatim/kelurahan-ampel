@@ -3,7 +3,7 @@
   <!-- Search widget-->
   <form>
     <div class="flex flex-col border rounded-lg slideanim">
-      <div class="px-2 py-3 bg-gray-200 rounded-t-lg">
+      <div class="px-2 py-3 bg-gray-200 rounded-t-lg dark:bg-gray-700">
         <label for="location-search" class="mx-2 text-md font-medium text-gray-900 dark:text-white">Search</label>
       </div>
 
@@ -21,7 +21,7 @@
   
   <!-- Categories widget-->
   <div class="my-6 border rounded-lg slideanim">
-    <div class="px-2 py-3 bg-gray-200 rounded-t-lg">
+    <div class="px-2 py-3 bg-gray-200 rounded-t-lg dark:bg-gray-700">
       <span class="mx-2 text-md font-medium text-gray-900 dark:text-white">Categories</span></div>
     <div class="grid flex-rows grid-cols-2 gap-2 px-3 py-3">
       @foreach ( $categories as $category)

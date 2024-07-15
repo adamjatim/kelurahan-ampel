@@ -60,19 +60,19 @@
 
             <div class="flex flex-col gap-2 mb-5">
                 <label for="kategori" class="form font-medium text-xl">Kategori</label>
-                <select name="category_id" id=""
+                <select name="category_id" id="  "
                     class="rounded-md border border-gray-200 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 @error('category_id') !border-red-300 @enderror">
-                    <option value="" selected>
+                    <option value="">
                         Pilih Kategori
                     </option>
                     @foreach ($categories as $category)
                         @if (old('category_id') == $category->id)
                             <option value="{{ $category->id }}">
-                                {{ $category->name }}
+                                {{ $category->nama }}
                             </option>
                         @else
                             <option value="{{ $category->id }}">
-                                {{ $category->name }}
+                                {{ $category->nama }}
                             </option>
                         @endif
                     @endforeach
@@ -117,7 +117,7 @@
             <div class="flex flex-col gap-2 mb-5">
                 <label for="slug" class="form font-medium text-xl">Tag</label>
                 <input type="text" class="rounded-md border border-gray-200 @error('tag') !border-red-300 @enderror"
-                    name="tag" id="" value="{{ old('tag') }}">
+                    name="tag" id="tokenfield" value="{{ old('tag') }}">
                 <p class="mt-1 text-sm text-gray-700" id="">pisahkan dengan koma</p>
                 @error('tag')
                     <div class="flex flex-row text-red-600 mt-1 items-center gap-1">
@@ -135,9 +135,9 @@
             </div>
 
             <div class="flex flex-col gap-2 mb-5">
-                <label for="deskripsi" class="form font-medium text-xl">Deskripsi</label>
-                <textarea name="deskripsi" id="editor" class="rounded-md border-gray-200">{{ old('deskripsi') }}</textarea>
-                @error('deskripsi')
+                <label for="isi" class="form font-medium text-xl">Isi</label>
+                <textarea name="isi" id="editor" class="rounded-md border-gray-200">{{ old('isi') }}</textarea>
+                @error('isi')
                     <div class="flex flex-row text-red-600 mt-1 items-center gap-1">
                         <svg class="w-7 h-7" width="256px" height="256px" viewBox="0 0 24.00 24.00" fill="none"
                             xmlns="http://www.w3.org/2000/svg" stroke="#dc2626" stroke-width="0.00024000000000000003">
@@ -171,10 +171,30 @@
         .ck-content {
             min-height: 100px;
         }
+
+        .tokenfield.form-control{
+            border-width: 1px;
+            border-radius: 0.375rem;
+            --tw-border-opacity: 1;
+            border-color: rgb(209 213 219 / var(--tw-border-opacity));
+            --tw-bg-opacity: 1;
+            background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+            padding-top: 0.625rem;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            --tw-text-opacity: 1;
+            color: rgb(17 24 39 / var(--tw-text-opacity));
+            background-position: right .75rem center;
+            background-repeat: no-repeat;
+            background-size: .75em .75em;
+            padding-right: 2.5rem;
+            print-color-adjust: exact;
+        }
     </style>
 
     <script>
-        console.log({!! 'slug' !!})
+        // console.log({!! 'slug' !!});
+        // console.log({!! 'tokenfields' !!});
 
         function getSlug() {
             $.get('{{ url('/slug-artikel') }}', {
@@ -185,5 +205,15 @@
                 }
             )
         }
+    </script>
+
+    <script>
+        $('#tokenfield').tokenfield({
+        autocomplete: {
+            source: [],
+            delay: 100
+        },
+            showAutocompleteOnFocus: true
+        })
     </script>
 @endsection

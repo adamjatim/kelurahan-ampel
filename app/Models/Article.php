@@ -30,7 +30,7 @@ class Article extends Model
     }
 
     public function tags(){
-        return $this->belongsTohasMany(Tag::class);
+        return $this->belongsToMany(Tag::class);
     }
 
     public function sluggable(): array
