@@ -17,14 +17,19 @@
   {{-- Core theme CSS (Flowbite) --}}
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
   {{-- Jquery cdn --}}
-  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-      crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
   {{-- Font awsome cdn --}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   {{-- CKEditor cdn --}}
   <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
   {{-- Data Tables cdn --}}
   <script rel="stylesheet" src="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css"></script>
+  {{-- jQuery UI CSS --}}
+  <link href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.css">
+  {{-- tokenfields js --}}
+  <script type="text/javascript" src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script> 
 </head>
 
 <body class="bg-gray-100 flex">
@@ -57,6 +62,8 @@
     });
     // new DataTable('#myTable');
   </script>
+
+  
 </body>
 
 </html>
