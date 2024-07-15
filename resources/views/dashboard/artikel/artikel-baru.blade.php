@@ -23,7 +23,7 @@
             <div class="flex flex-col gap-2 mb-5">
                 <label for="judul" class="form font-medium text-xl">Judul</label>
                 <input type="text" class="rounded-md border border-gray-200 @error('judul') !border-red-300 @enderror"
-                    name="judul" id="artikel" value="{{ old('judul') }}" onkeyup="getSlug()">
+                    name="judul" id="judul" value="{{ old('judul') }}" onkeyup="getSlug()">
                 @error('judul')
                     <div class="flex flex-row text-red-600 mt-1 items-center gap-1">
                         <svg class="w-7 h-7" width="256px" height="256px" viewBox="0 0 24.00 24.00" fill="none"
@@ -59,24 +59,25 @@
             </div>
 
             <div class="flex flex-col gap-2 mb-5">
-              <label for="kategori" class="form font-medium text-xl">Kategori</label>
-                <select name="category_id" id="" class="rounded-md border border-gray-200 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 @error('category_id') !border-red-300 @enderror">
-                  <option value="" selected>
-                    Pilih Kategori
-                  </option>
-                  @foreach ( $categories as $category)
-                    @if (old('category_id') == $category->id)
-                        <option value="{{ $category->id }}">
-                          {{ $category->name }}
-                        </option>
-                      @else
-                      <option value="{{ $category->id }}">
-                        {{ $category->name }}
-                      </option>
-                    @endif
-                  @endforeach
+                <label for="kategori" class="form font-medium text-xl">Kategori</label>
+                <select name="category_id" id=""
+                    class="rounded-md border border-gray-200 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 @error('category_id') !border-red-300 @enderror">
+                    <option value="" selected>
+                        Pilih Kategori
+                    </option>
+                    @foreach ($categories as $category)
+                        @if (old('category_id') == $category->id)
+                            <option value="{{ $category->id }}">
+                                {{ $category->name }}
+                            </option>
+                        @else
+                            <option value="{{ $category->id }}">
+                                {{ $category->name }}
+                            </option>
+                        @endif
+                    @endforeach
                 </select>
-                
+
                 @error('category_id')
                     <div class="flex flex-row text-red-600 mt-1 items-center gap-1">
                         <svg class="w-7 h-7" width="256px" height="256px" viewBox="0 0 24.00 24.00" fill="none"
@@ -93,39 +94,44 @@
             </div>
 
             <div class="flex flex-col gap-2 mb-5">
-              <label for="gambar" class="form font-medium text-xl">Gambar</label>
-              <img src="" width="500px" alt="" class="hidden max-w-full h-auto tampil-gambar mb-3">
-              <input type="file" class="rounded-md border border-gray-200 bg-white @error('gambar') !border-red-300 @enderror" name="gambar" id="gambar" onchange="tampilGambar()">
-              @error('gambar')
-                <div class="flex flex-row text-red-600 mt-1 items-center gap-1">
-                <svg class="w-7 h-7" width="256px" height="256px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#dc2626" stroke-width="0.00024000000000000003">
-                  <g id="SVGRepo_iconCarrier"> 
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M19.5 12C19.5 16.1421 16.1421 19.5 12 19.5C7.85786 19.5 4.5 16.1421 4.5 12C4.5 7.85786 7.85786 4.5 12 4.5C16.1421 4.5 19.5 7.85786 19.5 12ZM21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12ZM11.25 13.5V8.25H12.75V13.5H11.25ZM11.25 15.75V14.25H12.75V15.75H11.25Z" fill="#dc2626"></path>
-                  </g>
-                </svg>
-                {{ $message }}
-              </div>
-              @enderror
+                <label for="gambar" class="form font-medium text-xl">Gambar</label>
+                <img src="" width="500px" alt="" class="hidden max-w-full h-auto tampil-gambar mb-3">
+                <input type="file"
+                    class="rounded-md border border-gray-200 bg-white @error('gambar') !border-red-300 @enderror"
+                    name="gambar" id="gambar" onchange="tampilGambar()">
+                @error('gambar')
+                    <div class="flex flex-row text-red-600 mt-1 items-center gap-1">
+                        <svg class="w-7 h-7" width="256px" height="256px" viewBox="0 0 24.00 24.00" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" stroke="#dc2626" stroke-width="0.00024000000000000003">
+                            <g id="SVGRepo_iconCarrier">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M19.5 12C19.5 16.1421 16.1421 19.5 12 19.5C7.85786 19.5 4.5 16.1421 4.5 12C4.5 7.85786 7.85786 4.5 12 4.5C16.1421 4.5 19.5 7.85786 19.5 12ZM21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12ZM11.25 13.5V8.25H12.75V13.5H11.25ZM11.25 15.75V14.25H12.75V15.75H11.25Z"
+                                    fill="#dc2626"></path>
+                            </g>
+                        </svg>
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
 
             <div class="flex flex-col gap-2 mb-5">
-              <label for="slug" class="form font-medium text-xl">Tag</label>
-              <input type="text" class="rounded-md border border-gray-200 @error('tag') !border-red-300 @enderror"
-                  name="tag" id="" value="{{ old('tag') }}">
-              <p class="mt-1 text-sm text-gray-700" id="">pisahkan dengan koma</p>
-              @error('tag')
-                  <div class="flex flex-row text-red-600 mt-1 items-center gap-1">
-                      <svg class="w-7 h-7" width="256px" height="256px" viewBox="0 0 24.00 24.00" fill="none"
-                          xmlns="http://www.w3.org/2000/svg" stroke="#dc2626" stroke-width="0.00024000000000000003">
-                          <g id="SVGRepo_iconCarrier">
-                              <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M19.5 12C19.5 16.1421 16.1421 19.5 12 19.5C7.85786 19.5 4.5 16.1421 4.5 12C4.5 7.85786 7.85786 4.5 12 4.5C16.1421 4.5 19.5 7.85786 19.5 12ZM21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12ZM11.25 13.5V8.25H12.75V13.5H11.25ZM11.25 15.75V14.25H12.75V15.75H11.25Z"
-                                  fill="#dc2626"></path>
-                          </g>
-                      </svg>
-                      {{ $message }}
-                  </div>
-              @enderror
+                <label for="slug" class="form font-medium text-xl">Tag</label>
+                <input type="text" class="rounded-md border border-gray-200 @error('tag') !border-red-300 @enderror"
+                    name="tag" id="" value="{{ old('tag') }}">
+                <p class="mt-1 text-sm text-gray-700" id="">pisahkan dengan koma</p>
+                @error('tag')
+                    <div class="flex flex-row text-red-600 mt-1 items-center gap-1">
+                        <svg class="w-7 h-7" width="256px" height="256px" viewBox="0 0 24.00 24.00" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" stroke="#dc2626" stroke-width="0.00024000000000000003">
+                            <g id="SVGRepo_iconCarrier">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M19.5 12C19.5 16.1421 16.1421 19.5 12 19.5C7.85786 19.5 4.5 16.1421 4.5 12C4.5 7.85786 7.85786 4.5 12 4.5C16.1421 4.5 19.5 7.85786 19.5 12ZM21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12ZM11.25 13.5V8.25H12.75V13.5H11.25ZM11.25 15.75V14.25H12.75V15.75H11.25Z"
+                                    fill="#dc2626"></path>
+                            </g>
+                        </svg>
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
 
             <div class="flex flex-col gap-2 mb-5">
@@ -168,7 +174,7 @@
     </style>
 
     <script>
-        console.log({!! ('slug') !!})
+        console.log({!! 'slug' !!})
 
         function getSlug() {
             $.get('{{ url('/slug-artikel') }}', {
