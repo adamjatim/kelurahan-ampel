@@ -60,7 +60,7 @@
 
             <div class="flex flex-col gap-2 mb-5">
                 <label for="kategori" class="form font-medium text-xl">Kategori</label>
-                <select name="category_id" id="  "
+                <select name="category_id" id="category_id"
                     class="rounded-md border border-gray-200 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 @error('category_id') !border-red-300 @enderror">
                     <option value="">
                         Pilih Kategori

@@ -49,8 +49,8 @@
               {{ $article->judul }}
           </td>
           <td class="px-6 py-4 w-full">
-            @if ($article->category)
-                {{ $article->category_id }}
+            @if ($article->category_name)
+                {{ $article->category_name }}
             @else
                 <span>No Category Assigned</span>
             @endif
