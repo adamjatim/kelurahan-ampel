@@ -16,14 +16,20 @@ class ArticleController extends Controller
      */
     public function index()
     {
+        $articles = Article::orderBy('created_at', 'desc')
+            ->join('categories', 'articles.category_id', '=', 'categories.id')
+            ->select('articles.*', 'categories.nama as category_name')
+            ->get();
+
+        $categories = Category::all();
+
         return view('dashboard.artikel.index')->with([
-            'articles' => Article::orderBy('created_at', 'desc')->get(),
-            'categories' => Category::all(),
+            'articles' => $articles,
+            'categories' => $categories,
             'title' => "Article"
         ]);
-
-        return view('articles.index', compact('articles'));        
     }
+
 
     /**
      * Show the form for creating a new resource.
