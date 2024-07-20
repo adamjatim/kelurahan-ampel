@@ -17,7 +17,7 @@
   </a>
 
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400" id="myTable">
+  <table class= "w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400" id="myTable">
     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
       <tr>
         <th scope="col" class="px-6 py-3">
@@ -57,7 +57,7 @@
           </td>
           <td class="px-6 py-4 w-full">
               @foreach ( $article->tags as $tag )
-                  {{ $tag->name }}
+              <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">{{ $tag->name }}</button>
               @endforeach
           </td>
           <td class="px-6 py-4 flex flex-row gap-1">
