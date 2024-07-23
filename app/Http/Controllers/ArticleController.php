@@ -19,7 +19,7 @@ class ArticleController extends Controller
     {
         $articles = Article::orderBy('created_at', 'desc')
             ->join('categories', 'articles.category_id', '=', 'categories.id')
-            ->select('articles.*', 'categories.nama as category_name')
+            ->select('articles.*', 'categories.nama as category_name', 'categories.slug as category_slug')
             ->get();
 
         $categories = Category::all();

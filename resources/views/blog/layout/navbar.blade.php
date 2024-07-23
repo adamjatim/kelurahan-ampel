@@ -19,8 +19,9 @@
     <div class="hidden w-full lg:block lg:w-auto" id="navbar-default">
       <ul class="font-medium flex flex-col p-4 lg:p-0 mt-4 border border-gray-100 rounded-lg bg-blue-50 lg:flex-row lg:space-x-8 rtl:space-x-reverse lg:mt-0 lg:border-0 lg:bg-blue-50 dark:bg-gray-800 lg:dark:bg-gray-900 dark:border-gray-700">
         <li>
-          <a href="#"
-            class="block py-2 px-3 text-gray-900 rounded hover:bg-sky-200 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent text-sm"
+          <a href="/artikel"
+            class="block py-2 px-3 text-gray-900 rounded hover:bg-sky-200 lg:hover:bg-transparent lg:border-0 lg:hover:text-blue-700 lg:p-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent text-sm
+            {{ $title == 'Mengenal Ampel' || $title == 'Mengenal Ampel Detail' ? 'active' : '' }}"
           >Mengenal Ampel</a>
         </li>
         <li>
