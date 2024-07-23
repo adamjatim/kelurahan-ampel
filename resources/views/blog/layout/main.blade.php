@@ -17,6 +17,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   {{-- Core theme CSS (Flowbite) --}}
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+  {{-- Mobile Link Responsive CSS --}}
+  <link rel="stylesheet" href="{{ asset('mystyle.css') }}">
 </head>
 
 <body>
@@ -39,7 +41,7 @@
       @yield('content')
       
       {{-- make sure aside only exsist in '/' --}}
-      @if (Request::is('/'))
+      @if ($title != 'Login')
         {{-- Side widgets --}}
         @include('blog.layout.aside')
       @endif
