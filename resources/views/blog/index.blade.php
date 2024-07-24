@@ -8,17 +8,21 @@
                 <img class="rounded-t-lg w-full" src="{{ asset('images/' . $articles[0]->gambar) }}" alt="gambar  article" />
             </a>
             <div class="p-5">
-                <div class="text-sm text-gray-500">Diposting {{ $articles[0]->created_at->format('d F Y') }} - Kategori
-                    <a href="/artikel?kategori={{ $articles[0]->categories_slug }}" class="text-sm text-gray-600">
-                        @if ($articles[0]->category_name)
+                <!-- File: resources/views/blog/index.blade.php -->
+
+                <div class="text-sm text-gray-500">
+                    Diposting {{ $articles[0]->created_at->format('d F Y') }} - Kategori
+                    <a href="/artikel?kategori={{ $articles[0]->category->slug }}" class="text-sm text-gray-600">
+                        @if ($articles[0]->category)
                             <a href="" class="text-sm text-blue-500">
-                                {{ $article->category_name }}
+                                {{ $articles[0]->category->nama }}
                             </a>
                         @else
                             <span class="text-sm text-gray-400">Tidak Tersedia</span>
                         @endif
                     </a>
                 </div>
+
 
                 {{-- @foreach ($articles as $article)
                     {{ dd($article) }} <!-- Tambahkan ini untuk melihat data artikel -->

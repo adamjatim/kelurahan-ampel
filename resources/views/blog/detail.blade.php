@@ -7,9 +7,9 @@
             <div class="text-inherit italic mb-2">
                 Diposting {{ $article->created_at->format('d F Y') . ' oleh ' . $article->user->name }}
                 - Kategori <a href="/artikel?kategori={{ $article->categories_slug }}" class="text-sm text-gray-600">
-                    @if ($article->category_name)
+                    @if ($article->category->nama)
                         <a href="" class="text-sm text-blue-500">
-                            {{ $article->category_name }}
+                            {{ $article->category->nama }}
                         </a>
                     @else
                         <span class="text-sm text-gray-400">Tidak Tersedia</span>
