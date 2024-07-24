@@ -14,10 +14,10 @@
                     </a>
                     <div class="p-5">
                         <div class="text-sm text-gray-500">Diposting {{ $articles[0]->created_at->format('d F Y') }} - Kategori
-                            <a href="/artikel?kategori={{ $articles[0]->categories_slug }}" class="text-sm text-gray-600">
-                                @if ($articles[0]->category_name)
+                            <a href="/artikel?kategori={{ $articles[0]->category->slug }}" class="text-sm text-gray-600">
+                                @if ($articles[0]->category)
                                     <a href="" class="text-sm text-gray-600">
-                                        {{ $article->category_name }}
+                                        {{ $articles[0]->category->nama }}
                                     </a>
                                 @else
                                     <span class="text-sm text-gray-600">Uncategorized</span>
@@ -80,9 +80,9 @@
                             <div class="text-sm text-gray-500">Diposting {{ $article->created_at->format('d F Y') }} -
                                 Kategori
                                 <a href="/artikel?kategori={{ $article->categories_slug }}" class="text-sm text-gray-600">
-                                    @if ($article->category_name)
+                                    @if ($article->category)
                                         <a href="" class="text-sm text-gray-600">
-                                            {{ $article->category_name }}
+                                            {{ $article->category->nama }}
                                         </a>
                                     @else
                                         <span class="text-sm text-gray-600">Uncategorized</span>

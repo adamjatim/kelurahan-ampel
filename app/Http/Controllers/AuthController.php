@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
     public function index() {
-        return view('blog.login')->with(['tittle' => 'Login']);
+        return view('blog.login')->with(['title' => 'Login']);
     }
 
     public function authenticate(Request $request) {

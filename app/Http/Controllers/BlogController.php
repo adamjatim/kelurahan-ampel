@@ -9,14 +9,15 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('blog.index')->with([
-            'title'         => 'Mengenal Ampel',
-            'slides'        => Slide::all(),
-            'categories'    => Category::all(),
-            'articles'      => Article::orderBy('created_at', 'desc')->paginate(5)->withQueryString(),
-            'views'         => Article::orderBy('view','desc')->take(5)->get(),
-            'label'         => 'Artikel Populer'
+            'title' => '',
+            'slides' => Slide::all(),
+            'categories' => Category::all(),
+            'articles' => Article::with('category')->orderBy('created_at', 'desc')->paginate(5)->withQueryString(),
+            'views' => Article::orderBy('view','desc')->take(5)->get(),
+            'label' => 'Artikel Populer'
         ]);
     }
 
@@ -46,7 +47,7 @@ class BlogController extends Controller
         }
 
         return view('blog.artikel')->with([
-            'title'         => 'Artikel',
+            'title'         => 'Mengenal Ampel',
             'categories'    => Category::all(),
             'articles'      => $articles->paginate(5)->withQueryString(),
             'filter'        => $filter,

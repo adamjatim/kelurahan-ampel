@@ -25,6 +25,7 @@ class Article extends Model
         return $this->belongsTo(Category::class);
     }
 
+    // Definisikan relationship dengan model Category
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id');
