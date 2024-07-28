@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SlideController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
@@ -27,10 +28,9 @@ Route::redirect('home', 'dashboard');
 Route::get('/login', [AuthController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [AuthController::class, 'authenticate']);
 Route::post('/logout', [AuthController::class, 'logout']);
-// -- DASHBOARD PAGE --
-Route::get('/dashboard', function () {
-  return view('dashboard.index')->with(['title' =>  'About']);
-})->middleware('auth');
+// -- ABOUT PAGE --
+Route::get('/dashboard', [AboutController::class, 'index'])->middleware('auth');
+Route::put('/dashboard', [AboutController::class, 'update'])->middleware('auth');
 // -- SLIDE PAGE --
 Route::resource('/dashboard/slide', SlideController::class)->middleware('auth');
 // -- CATEGORY PAGE --
