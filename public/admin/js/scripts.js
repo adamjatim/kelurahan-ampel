@@ -29,7 +29,7 @@ function tampilGambar() {
   let gambar = document.getElementById('gambar');
   let tampilGambar = document.querySelector('.tampil-gambar');
 
-  tampilGambar.classList = '!block';
+  tampilGambar.classList = '!block rounded-full w-auto h-auto';
 
   const oFReader = new FileReader();
   oFReader.readAsDataURL(gambar.files[0]);

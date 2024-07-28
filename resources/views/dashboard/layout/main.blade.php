@@ -25,7 +25,7 @@
   {{-- Data Tables cdn --}}
   <script rel="stylesheet" src="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css"></script>
   {{-- jQuery UI CSS --}}
-  <link href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" type="text/css" rel="stylesheet">
+  <link href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" type="text/css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.css">
   {{-- tokenfields js --}}
   <script type="text/javascript" src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>

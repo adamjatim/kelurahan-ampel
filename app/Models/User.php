@@ -22,6 +22,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'foto',
+        'alamat',
+        'telpon',
+        'keahlian',
+        'words',
     ];
 
     public function articles(){
