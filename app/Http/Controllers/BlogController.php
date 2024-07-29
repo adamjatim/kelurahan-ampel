@@ -11,12 +11,17 @@ class BlogController extends Controller
 {
     public function index()
     {
+        $slides = Slide::all();
+        $categories = Category::all();
+        $articles = Article::with('category')->orderBy('created_at', 'desc')->paginate(5)->withQueryString();
+        $views = Article::orderBy('view','desc')->take(5)->get();
+        
         return view('blog.index')->with([
             'title' => '',
-            'slides' => Slide::all(),
-            'categories' => Category::all(),
-            'articles' => Article::with('category')->orderBy('created_at', 'desc')->paginate(5)->withQueryString(),
-            'views' => Article::orderBy('view','desc')->take(5)->get(),
+            'slides' => $slides,
+            'categories' => $categories,
+            'articles' => $articles,
+            'views' => $views,
             'label' => 'Artikel Populer'
         ]);
     }
