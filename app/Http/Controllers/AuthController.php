@@ -24,7 +24,7 @@ class AuthController extends Controller
         if (Auth::attempt($otentikasi)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('/dashboard/artikel');
         }
 
         return back()->with('Gagal', 'Email atau Password salah');

@@ -4,21 +4,30 @@
   </div>
 
   <nav class="text-white text-base font-semibold pt-3">
-    <a href="/dashboard" 
-        class="flex items-center py-4 pl-6 nav-item {{ $title == 'About' ? 'bg-white text-gray-700' : 'text-white opacity-75 hover:opacity-100 hover:bg-gray-800'}}">
-        About
-    </a>
-    <a href="/dashboard/slide"
-        class="flex items-center py-4 pl-6 nav-item {{ $title == 'Slide' ? 'bg-white text-gray-700' : 'text-white opacity-75 hover:opacity-100 hover:bg-gray-800'}}">
-        Slide
+    <a href="/dashboard/artikel/"
+        class="flex items-center py-4 pl-6 nav-item {{ $title == 'Article' ? 'bg-white text-gray-700' : 'text-white opacity-75 hover:opacity-100 hover:bg-gray-800'}}">
+        Artikel
     </a>
     <a href="/dashboard/kategori/"
         class="flex items-center py-4 pl-6 nav-item {{ $title == 'Category' ? 'bg-white text-gray-700' : 'text-white opacity-75 hover:opacity-100 hover:bg-gray-800'}}">
-        Category 
+        Kategori
     </a>
-    <a href="/dashboard/artikel"
-        class="flex items-center py-4 pl-6 nav-item {{ $title == 'Article' ? 'bg-white text-gray-700' : 'text-white opacity-75 hover:opacity-100 hover:bg-gray-800'}}">
-        Article
+    <a href="/dashboard/mengenal-ampel/"
+        class="flex items-center py-4 pl-6 nav-item {{ $title == 'Mengenal Ampel' ? 'bg-white text-gray-700' : 'text-white opacity-75 hover:opacity-100 hover:bg-gray-800'}}">
+        Mengenal Ampel
+    </a>
+    <a href="/dashboard/layanan-publik/"
+        class="flex items-center py-4 pl-6 nav-item {{ $title == 'Layanan Publik' ? 'bg-white text-gray-700' : 'text-white opacity-75 hover:opacity-100 hover:bg-gray-800'}}">
+        Layanan Publik
+    </a>
+    {{-- <a href="/dashboard/slide"
+        class="flex items-center py-4 pl-6 nav-item {{ $title == 'Slide' ? 'bg-white text-gray-700' : 'text-white opacity-75 hover:opacity-100 hover:bg-gray-800'}}">
+        Slide
+    </a> --}}
+    
+    <a href="/dashboard/profile/" 
+        class="flex items-center py-4 pl-6 nav-item {{ $title == 'Profile' ? 'bg-white text-gray-700' : 'text-white opacity-75 hover:opacity-100 hover:bg-gray-800'}}">
+        Profile
     </a>
   </nav>
 </aside>

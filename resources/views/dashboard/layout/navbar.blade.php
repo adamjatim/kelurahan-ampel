@@ -42,20 +42,28 @@
 
   <!-- Dropdown Nav -->
   <nav :class="isOpen ? 'flex' : 'hidden'" class="flex flex-col pt-4">
-    <a href="/dashboard" class="flex items-center text-white py-2 pl-4 nav-item hover:bg-gray-700 rounded-md {{ $title == 'About' ? '' : 'opacity-75'}}">
-      About
+    <a href="/dashboard/artikel/" class="flex items-center text-white py-2 pl-4 nav-item hover:bg-gray-700 rounded-md {{ $title == 'About' ? '' : 'opacity-75'}}">
+      Artikel
     </a>
-    <a href="/dashboard/slide"
+    <a href="/dashboard/kategori/"
+      class="flex items-center text-white hover:opacity-100 py-2 pl-4 nav-item hover:bg-gray-700 rounded-md {{ $title == 'Category' ? '' : 'opacity-75'}}">
+      Kategori
+    </a>
+    <a href="/dashboard/mengenal-ampel"
+      class="flex items-center text-white hover:opacity-100 py-2 pl-4 nav-item hover:bg-gray-700 rounded-md {{ $title == 'Category' ? '' : 'opacity-75'}}">
+      Mengenal Ampel
+    </a>
+    <a href="/dashboard/layanan-publik"
+      class="flex items-center text-white hover:opacity-100 py-2 pl-4 nav-item hover:bg-gray-700 rounded-md {{ $title == 'Category' ? '' : 'opacity-75'}}">
+      Layanan Publik
+    </a>
+    {{-- <a href="/dashboard/slide"
       class="flex items-center text-white hover:opacity-100 py-2 pl-4 nav-item hover:bg-gray-700 rounded-md {{ $title == 'Slide' ? '' : 'opacity-75'}}">
       Slide
-    </a>
-    <a href="#"
+    </a> --}}
+    <a href="/dashboard/profile"
       class="flex items-center text-white hover:opacity-100 py-2 pl-4 nav-item hover:bg-gray-700 rounded-md {{ $title == 'Category' ? '' : 'opacity-75'}}">
-      Category
-    </a>
-    <a href="#"
-      class="flex items-center text-white hover:opacity-100 py-2 pl-4 nav-item hover:bg-gray-700 rounded-md {{ $title == 'Article' ? '' : 'opacity-75'}}">
-      Article
+      Profile
     </a>
     <span class="border-t opacity-75 w-[96%] mx-auto my-4"></span>
     <a href="/" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item hover:bg-gray-700 rounded-md">
